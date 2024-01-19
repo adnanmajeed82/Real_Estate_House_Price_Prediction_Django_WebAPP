@@ -1,0 +1,12 @@
+
+<!-- prediction/templates/prediction/predict.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Predict House Price</h2>
+  <form method="post" action="{% url 'predict' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Predict</button>
+  </form>
+{% endblock %}

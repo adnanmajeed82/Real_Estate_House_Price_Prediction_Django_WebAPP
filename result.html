@@ -1,0 +1,28 @@
+<!-- prediction/templates/prediction/result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Prediction Results</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>House ID</th>
+        <th>Area</th>
+        <th>Bedrooms</th>
+        <th>Bathrooms</th>
+        <th>Predicted Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+        <tr>
+          <td>{{ result.house.id }}</td>
+          <td>{{ result.house.area }}</td>
+          <td>{{ result.house.bedrooms }}</td>
+          <td>{{ result.house.bathrooms }}</td>
+          <td>${{ result.predicted_price }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
